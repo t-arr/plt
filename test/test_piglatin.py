@@ -32,3 +32,7 @@ class TestPigLatin(unittest.TestCase):
     def test_string_starts_with_y(self):
         translator = PigLatin("yhello")
         self.assertEqual("helloyay", translator.translate())
+
+    def test_string_starts_with_vowel_ends_with_consonant(self):
+        translator = PigLatin("open")
+        self.assertEqual("openay", translator.translate())
