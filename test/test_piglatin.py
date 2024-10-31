@@ -6,8 +6,8 @@ from error import PigLatinError
 class TestPigLatin(unittest.TestCase):
 
     def test_translator_get(self):
-        translator = PigLatin("Hello world")
-        self.assertEqual("Hello world", translator.get_phrase())
+        translator = PigLatin("hello world")
+        self.assertEqual("hello world", translator.get_phrase())
 
     def test_empty_string(self):
         translator = PigLatin("")
@@ -16,3 +16,7 @@ class TestPigLatin(unittest.TestCase):
     def test_string_ends_with_y(self):
         translator = PigLatin("any")
         self.assertEqual("anynay", translator.translate())
+
+    def test_string_ends_with_vowel(self):
+        translator = PigLatin("apple")
+        self.assertEqual("appleyay", translator.translate())
