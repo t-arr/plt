@@ -9,14 +9,13 @@ class PigLatin:
     def translate(self) -> str:
         phrase = self.get_phrase()
         if not phrase:
-            return "nil"
+            return 'nil'
 
         vowels = ['a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'å']
         translated = []
-
         for word in phrase.split():
             first_char, last_char = word[0], word[-1]
-
+            parts = word.split('-')
             if first_char not in vowels:
                 if word[1] not in vowels:
                     translated.append(word[2:] + first_char + word[1] + 'ay')
