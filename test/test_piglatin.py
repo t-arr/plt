@@ -44,3 +44,7 @@ class TestPigLatin(unittest.TestCase):
     def test_string_starts_with_y_single_consonant(self):
         translator = PigLatin("youtube")
         self.assertEqual("outubeyay", translator.translate())
+
+    def test_multiple_words(self):
+        translator = PigLatin("hello world")
+        self.assertEqual("ellohay orldway", translator.translate())
