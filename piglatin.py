@@ -13,6 +13,8 @@ class PigLatin:
         last_char = self._phrase[-1]
         first_char = self._phrase[0]
         if first_char not in vowels:
+            if self._phrase[1] not in vowels:
+                return self._phrase[2:] + first_char + self._phrase[1] + 'ay'
             return self._phrase[1:] + first_char + 'ay'
         elif last_char == 'y':
             return self.get_phrase() + 'nay'
