@@ -9,3 +9,6 @@ class PigLatin:
     def translate(self) -> str:
         if self.get_phrase() == "":
             return "nil"
+        last_character = self._phrase[-1]
+        if last_character == 'y':
+            return self.get_phrase() + 'nay'

@@ -13,3 +13,6 @@ class TestPigLatin(unittest.TestCase):
         translator = PigLatin("")
         self.assertEqual("nil", translator.translate())
 
+    def test_string_ends_with_y(self):
+        translator = PigLatin("any")
+        self.assertEqual("anynay", translator.translate())
