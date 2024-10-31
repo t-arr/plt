@@ -7,14 +7,17 @@ class PigLatin:
         return self._phrase
 
     def translate(self) -> str:
-        vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'ä', 'ö', 'å']
+        vowels = ['a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'å']
         if self.get_phrase() == "":
             return "nil"
-        last_character = self._phrase[-1]
-        if last_character == 'y':
+        last_char = self._phrase[-1]
+        first_char = self._phrase[0]
+        if first_char not in vowels:
+            return self._phrase[1:] + first_char + 'ay'
+        elif last_char == 'y':
             return self.get_phrase() + 'nay'
-        if last_character in vowels:
+        elif last_char in vowels:
             return self.get_phrase() + 'yay'
-        if last_character not in vowels:
+        elif last_char not in vowels:
             return self.get_phrase() + 'ay'
 
